@@ -2,6 +2,10 @@
 
 * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
+*:focus { 
+  outline: none;
+}
+
 html, body {
   background-color: #f6f6f6;
   width: 100vh;
