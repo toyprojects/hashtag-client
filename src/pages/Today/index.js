@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TodayRanking, TodayNew, TodayReward, TodayBenefit } from '../';
+import { TodayRanking, TodayNew, TodayReward, TodayBenefit, TodayBasket, TodayEvent } from '../';
 
 class Today extends Component {
   render() {
@@ -11,6 +11,10 @@ class Today extends Component {
       return <TodayReward />
     else if (this.props.match.params.title === 'benefit')
       return <TodayBenefit />
+    else if (this.props.match.params.title === 'basket')
+      return <TodayBasket />
+    else if (this.props.match.params.title === 'event')
+      return <TodayEvent />
     else
       return false
   }
