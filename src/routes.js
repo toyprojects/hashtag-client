@@ -1,4 +1,4 @@
-import { Home, SignIn, SignUp, Category, Heart, Basket, MyPage } from './pages'
+import { Home, SignIn, SignUp, Category, Heart, Basket, MyPage, Today } from './pages'
 
 export default [
   {
@@ -28,6 +28,10 @@ export default [
   }, {
     path: '/mypage',
     component: MyPage,
+    exact: true
+  }, {
+    path: '/today/:title',
+    component: Today,
     exact: true
   }
 ]
