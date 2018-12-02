@@ -54,7 +54,7 @@ const StyledLink = styled(Link)`
 
 const LineWrap = styled.div`
   text-align: left;
-  height: 30px;
+  height: 39px;
 `
 
 const FAIcon = styled(FontAwesomeIcon)`
