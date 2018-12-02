@@ -74,17 +74,17 @@ class LeftBanner extends Component {
           </MenuArea>
           <LineSeparator />
           <LineWrap>
-            <StyledLink to="/"><FontAwesomeIcon icon="bars" /> 카테고리</StyledLink>
+            <StyledLink to="/categories"><FontAwesomeIcon icon="bars" /> 카테고리</StyledLink>
           </LineWrap>
           <LineWrap>
-            <StyledLink to="/"><FontAwesomeIcon icon="heart" /> 하트</StyledLink>
+            <StyledLink to="/heart"><FontAwesomeIcon icon="heart" /> 하트</StyledLink>
           </LineWrap>
           <LineWrap>
-            <StyledLink to="/"><FontAwesomeIcon icon="user" /> 마이페이지</StyledLink>
+            <StyledLink to="/mypage"><FontAwesomeIcon icon="user" /> 마이페이지</StyledLink>
           </LineWrap>
           <LineSeparator />
           <LineWrap>
-            <StyledLink to="/"><FontAwesomeIcon icon="shopping-basket" /> 장바구니</StyledLink>
+            <StyledLink to="/basket"><FontAwesomeIcon icon="shopping-basket" /> 장바구니</StyledLink>
           </LineWrap>
         </Wrap>
       </Menu>
