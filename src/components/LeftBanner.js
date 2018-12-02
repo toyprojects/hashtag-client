@@ -57,6 +57,10 @@ const LineWrap = styled.div`
   height: 30px;
 `
 
+const FAIcon = styled(FontAwesomeIcon)`
+  margin-right: 5px;
+`
+
 class LeftBanner extends Component {
   render() {
     return (
@@ -74,17 +78,17 @@ class LeftBanner extends Component {
           </MenuArea>
           <LineSeparator />
           <LineWrap>
-            <StyledLink to="/categories"><FontAwesomeIcon icon="bars" /> 카테고리</StyledLink>
+            <StyledLink to="/categories"><FAIcon icon="bars" style={{ width: '0.875em' }} /> 카테고리</StyledLink>
           </LineWrap>
           <LineWrap>
-            <StyledLink to="/heart"><FontAwesomeIcon icon="heart" /> 하트</StyledLink>
+            <StyledLink to="/heart"><FAIcon icon="heart" style={{ width: '0.875em' }} /> 하트</StyledLink>
           </LineWrap>
           <LineWrap>
-            <StyledLink to="/mypage"><FontAwesomeIcon icon="user" /> 마이페이지</StyledLink>
+            <StyledLink to="/mypage"><FAIcon icon="user" style={{ width: '0.875em' }} /> 마이페이지</StyledLink>
           </LineWrap>
           <LineSeparator />
           <LineWrap>
-            <StyledLink to="/basket"><FontAwesomeIcon icon="shopping-basket" /> 장바구니</StyledLink>
+            <StyledLink to="/basket"><FAIcon icon="shopping-basket" style={{ width: '0.875em' }} /> 장바구니</StyledLink>
           </LineWrap>
         </Wrap>
       </Menu>
