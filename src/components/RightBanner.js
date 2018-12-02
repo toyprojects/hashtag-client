@@ -14,7 +14,6 @@ class RightBanner extends Component {
   render() {
     return (
       <Menu className="banner">
-        <h1>인기글</h1>
       </Menu>
     );
   }
