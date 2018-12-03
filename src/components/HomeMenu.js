@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const SwipeMenu = styled.div`
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
+  margin-bottom: 15px;
   height: 40px;
   white-space: nowrap;
   overflow-x: hidden;
