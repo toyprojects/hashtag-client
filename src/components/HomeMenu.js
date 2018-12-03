@@ -43,7 +43,8 @@ const StyledLink = styled(NavLink)`
 const SwiperParentApp = {
   width: 'auto',
   display: 'inline-block',
-  marginLeft: '20px'
+  marginLeft: '20px',
+  marginRight: '20px'
 }
 
 class HomeMenu extends Component {
@@ -51,15 +52,13 @@ class HomeMenu extends Component {
     const params = {
       slidesPerView: 'auto',
       grabCursor: true,
-      autoHeight: true,
-      width: 0,
       pagination: {
         clickable: true
       },
     };
     return (
       <SwipeMenu>
-        <Swiper {...params} style={{ height: 'auto' }}>
+        <Swiper {...params}>
           <StyledLink to="/" exact="true" style={ SwiperParentApp }>
             <div className="inner-slide-content">홈</div>
           </StyledLink>
