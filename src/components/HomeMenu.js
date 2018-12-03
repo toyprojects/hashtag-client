@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import QueryString from 'query-string'
 import styled from 'styled-components'
+import Swiper from 'react-id-swiper'
 
 const SwipeMenu = styled.div`
   border-bottom: 1px solid #eee;
@@ -14,6 +15,7 @@ const SwipeMenu = styled.div`
 `
 
 const StyledLink = styled(NavLink)`
+  width: auto;
   display: inline-block;
   background-color: transparent !important;
   background-image: none !important;
@@ -24,7 +26,7 @@ const StyledLink = styled(NavLink)`
   font-size: 16px;
   text-decoration: none;
   color: black;
-  margin-left: 20px;
+  margin: 0;
 
   &:hover {
     color: black;
@@ -38,17 +40,48 @@ const StyledLink = styled(NavLink)`
   }
 `
 
+const SwiperParentApp = {
+  width: 'auto',
+  display: 'inline-block',
+  marginLeft: '20px'
+}
+
 class HomeMenu extends Component {
   render() {
+    const params = {
+      slidesPerView: 'auto',
+      grabCursor: true,
+      autoHeight: true,
+      width: 0,
+      pagination: {
+        clickable: true
+      },
+    };
     return (
       <SwipeMenu>
-        <StyledLink to="/" exact="true" style={{ marginLeft: '30px' }}>홈</StyledLink>
-        <StyledLink to="/today/ranking">오늘랭킹</StyledLink>
-        <StyledLink to="/today/new">오늘신상</StyledLink>
-        <StyledLink to="/today/reward">오늘리워드</StyledLink>
-        <StyledLink to="/today/benefit">오늘혜택</StyledLink>
-        <StyledLink to="/today/basket">오늘찜순위</StyledLink>
-        <StyledLink to="/today/event" style={{ marginRight: '30px' }}>오늘이벤트</StyledLink>
+        <Swiper {...params} style={{ height: 'auto' }}>
+          <StyledLink to="/" exact="true" style={ SwiperParentApp }>
+            <div className="inner-slide-content">홈</div>
+          </StyledLink>
+          <StyledLink to="/today/ranking" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘랭킹</div>
+          </StyledLink>
+          <StyledLink to="/today/new" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘신상</div>
+          </StyledLink>
+          <StyledLink to="/today/reward" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘리워드</div>
+          </StyledLink>
+          <StyledLink to="/today/benefit" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘혜택</div>
+          </StyledLink>
+          <StyledLink to="/today/basket" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘찜순위</div>
+          </StyledLink>
+          <StyledLink to="/today/event" style={ SwiperParentApp }>
+            <div className="inner-slide-content">오늘이벤트</div>
+          </StyledLink>
+        </Swiper>
       </SwipeMenu>
     )
   }
