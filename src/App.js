@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, HashRouter, BrowserRouter, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import LeftBanner from './components/LeftBanner'
 import RightBanner from './components/RightBanner'
@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div style={{ textAlign: 'center', background: '#f6f6f6' }}>
           <LeftBanner />
           <View>
@@ -50,7 +50,7 @@ class App extends Component {
           </View>
           <RightBanner />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
