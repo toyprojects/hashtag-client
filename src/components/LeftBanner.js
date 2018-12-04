@@ -6,7 +6,17 @@ import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faHeart, faUser, faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
+import Logo from '../assets/images/logo.png'
+
 library.add(faBars, faHeart, faUser, faShoppingBasket)
+
+
+const LogoImage = styled.div`
+  background-image: url(${Logo});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 35px;
+`
 
 const Menu = styled.div`
   background-color: white;
@@ -68,7 +78,7 @@ class LeftBanner extends Component {
         <Wrap>
           <LogoArea>
             <StyledLink to="/" style={{ textDecoration: 'none', color: 'black' }}>
-              <h3>Logo Image</h3>
+              <LogoImage />
             </StyledLink>
           </LogoArea>
           <MenuArea>
