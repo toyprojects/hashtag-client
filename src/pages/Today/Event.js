@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import HomeMenu from '../../components/HomeMenu'
-import '../page.css'
+import '../../assets/css/page.css'
 
 class TodayEvent extends Component {
   render() {

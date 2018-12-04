@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import HomeMenu from '../components/HomeMenu'
+import HomeMenu from '../../components/HomeMenu'
 import Swiper from 'react-id-swiper'
-import './page.css'
-import './swiper.css'
+import '../../assets/css/page.css'
+import '../../assets/css/swiper.css'
 
 class Home extends Component {
   render() {
