@@ -3,9 +3,11 @@ import { Route, HashRouter, BrowserRouter, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import LeftBanner from './components/LeftBanner'
 import RightBanner from './components/RightBanner'
-import BounceLoader from 'react-spinners/BounceLoader';
+// import BounceLoader from 'react-spinners/BounceLoader'
+import HomeMenu from './components/HomeMenu'
 
 import routes from './routes'
+import { Home } from './pages';
 
 const View = styled.div`
   background-color: white;
@@ -31,26 +33,31 @@ class App extends Component {
     }
   }
 
+
   render() {
+    function renderMenu() {
+      const URL = ['#/', '#/today/ranking', '#/today/new', '#/today/reward', '#/today/benefit', '#/today/basket', '#/today/event']
+      return URL.indexOf(window.location.hash) >= 0 && <HomeMenu />;
+    }
+  
     return (
-      <HashRouter>
         <div style={{ textAlign: 'center', background: '#f6f6f6' }}>
           <LeftBanner />
           <View>
-            <BounceLoader
+            {/* <BounceLoader
               className={override}
               sizeUnit={"px"}
               size={150}
               color={'#2979ff'}
               loading={this.state.loading}
-            />
+            /> */}
+            { renderMenu() }
             <Switch>
-              { routes.map(route => <Route key={route.path} {... route} />) }
+              { routes.map(route => <Route key={route.path} {... route} />) }}
             </Switch>
           </View>
           <RightBanner />
         </div>
-      </HashRouter>
     );
   }
 }

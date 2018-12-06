@@ -6,6 +6,7 @@ import Swiper from 'react-id-swiper'
 
 const SwipeMenu = styled.div`
   border-bottom: 1px solid #eee;
+  margin-top: 70px;
   padding-bottom: 10px;
   margin-bottom: 15px;
   height: 40px;
