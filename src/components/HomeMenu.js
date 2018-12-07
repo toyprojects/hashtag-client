@@ -49,6 +49,11 @@ const SwiperParentApp = {
 }
 
 class HomeMenu extends Component {
+
+  componentDidMount() {
+    console.log('menu component did mount');
+  }
+
   render() {
     const params = {
       slidesPerView: 'auto',

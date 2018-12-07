@@ -5,7 +5,15 @@ import Swiper from 'react-id-swiper'
 import '../../assets/css/page.css'
 import '../../assets/css/swiper.css'
 
+import HomeMenu from '../../components/HomeMenu'
+
 class Home extends Component {
+
+
+  componentDidMount() {
+    console.log('home component did mount')
+  }
+
   render() {
     const params = {
       loop: true,
@@ -21,6 +29,9 @@ class Home extends Component {
 
     return (
       <div className="page-wrap">
+
+        <HomeMenu />
+
         <Swiper {...params}>
           <div><img src="http://image.oneprice.kr/2018/0921/ca35882bda616330af0e374bbe233f43.jpg" /></div>
           <div><img src="http://image.oneprice.kr/2018/1023/c044726eaa93b2d1b6305bababb68d60.jpg" /></div>
