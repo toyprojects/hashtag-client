@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, HashRouter, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, withRouter, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import LeftBanner from './components/LeftBanner'
 import RightBanner from './components/RightBanner'
@@ -36,6 +36,7 @@ class App extends Component {
 
   render() {
     function renderMenu() {
+      // TODO:: URL 하드코딩 정리 필요
       const URL = ['#/', '#/today/ranking', '#/today/new', '#/today/reward', '#/today/benefit', '#/today/basket', '#/today/event']
       return URL.indexOf(window.location.hash) >= 0 && <HomeMenu />;
     }
@@ -51,7 +52,7 @@ class App extends Component {
               color={'#2979ff'}
               loading={this.state.loading}
             /> */}
-            { renderMenu() }
+            <Route path="/(|today)" component={HomeMenu} />
             <Switch>
               { routes.map(route => <Route key={route.path} {... route} />) }}
             </Switch>
@@ -62,4 +63,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
