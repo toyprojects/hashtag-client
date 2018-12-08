@@ -5,10 +5,10 @@ import styled from 'styled-components'
 // font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faHeart, faUser, faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb, faMedal, faBars, faHeart, faUser, faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../assets/images/logo.png'
 
-library.add(faBars, faHeart, faUser, faShoppingBasket)
+library.add(faLightbulb, faMedal, faBars, faHeart, faUser, faShoppingBasket)
 
 
 const LogoImage = styled.div`
@@ -87,6 +87,12 @@ class LeftBanner extends Component {
             <StyledLink to="/signup">회원가입</StyledLink>
           </MenuArea>
           <LineSeparator />
+          <LineWrap>
+            <StyledLink to="/today/event"><FAIcon icon="lightbulb" style={{ width: '0.875em' }} /> 이벤트</StyledLink>
+          </LineWrap>
+          <LineWrap>
+            <StyledLink to="/today/ranking"><FAIcon icon="medal" style={{ width: '0.875em' }} /> 베스트</StyledLink>
+          </LineWrap>
           <LineWrap>
             <StyledLink to="/categories"><FAIcon icon="bars" style={{ width: '0.875em' }} /> 카테고리</StyledLink>
           </LineWrap>
