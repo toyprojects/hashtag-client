@@ -7,7 +7,6 @@ import RightBanner from './components/RightBanner'
 import HomeMenu from './components/HomeMenu'
 
 import routes from './routes'
-import { Home } from './pages';
 
 const View = styled.div`
   background-color: white;
@@ -19,11 +18,6 @@ const View = styled.div`
   border-right: 1px solid #eee;
   overflow: auto;
 `
-
-const override = {
-  margin: '0 auto',
-  marginTop: '50%'
-}
 
 class App extends Component {
   constructor(props) {
