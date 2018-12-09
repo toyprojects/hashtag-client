@@ -68,6 +68,39 @@ const Button = styled.button`
   color: #fff;
 `
 
+const FormInput = styled.input`
+  border: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  font-size: 24px;
+  color: black;
+  font-weight: 200;
+  background-color: transparent;
+`
+
+const FormInputGroup = styled.div`
+  padding-bottom: 40px;
+`
+
+const SubInformation = styled.p`
+  padding-top: 3px;
+  font-size: 10px;
+  color: #999;
+`
+
+const Verify = styled.button`
+  float: right;
+  background-color: #fff;
+  border-radius: 30px;
+  font-size: 11px;
+  z-index: 20;
+  padding: 3px 5px;
+  /* position: absolute; */
+  margin-top: -38px;
+  border: 1px solid #ccc;
+  color: #999;
+`
+
 /**
  * terms - 이용약관 동의
  * policy - 개인정보 취급방침 동의
@@ -151,6 +184,9 @@ class Phase extends Component {
 
 class PhaseConsent extends Component {
   render() {
+    const _URL = new URLSearchParams(this.props.location.search);
+    _URL.get('agree') !== 'true' && this.props.history.goBack()
+    
     return (
       <PhaseForm>
         <div>
@@ -161,7 +197,30 @@ class PhaseConsent extends Component {
         </div>
         <TermForm>
           <Information>
-            
+            <FormInputGroup>
+              <FormInput placeholder="이름" />
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="이메일" />
+              <SubInformation>로그인 또는 비밀번호 재설정시 필요합니다.</SubInformation>
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="비밀번호" />
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="비밀번호 확인" />
+              <SubInformation>6~24자 영문자 및 숫자 포함</SubInformation>
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="핸드폰번호" /> <Verify>인증번호 요청</Verify>
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="인증번호" /> <Verify>인증번호 확인</Verify>
+            </FormInputGroup>
+            <FormInputGroup>
+              <FormInput placeholder="추천인 아이디/이메일" />
+              <SubInformation>추천인 아이디를 입력하면 포인트를 드려요!</SubInformation>
+            </FormInputGroup>
           </Information>
           <ButtonForm>
             <Button>회원가입</Button>
