@@ -87,12 +87,12 @@ class Phase extends Component {
   handleCheck = (e) => {
     if ([e.target.name] == 'allAgree') {
       this.setState({
-        terms: true,
-        policy: true
+        terms: e.target.checked,
+        policy: e.target.checked
       })
     }
     this.setState({
-      [e.target.name]: true
+      [e.target.name]: e.target.checked
     })
   }
 
@@ -119,13 +119,13 @@ class Phase extends Component {
         </div>
         <TermForm>
           <Term>
-            <CheckBox type="checkbox" name="terms" onClick={ this.handleCheck } checked={ this.state.terms } /> 이용약관 동의 (필수)
+            <CheckBox type="checkbox" name="terms" onChange={ this.handleCheck } checked={ this.state.terms } /> 이용약관 동의 (필수)
           </Term>
           <Term>
-            <CheckBox type="checkbox" name="policy" onClick={ this.handleCheck } checked={ this.state.policy } /> 개인정보 취급방침 동의 (필수)
+            <CheckBox type="checkbox" name="policy" onChange={ this.handleCheck } checked={ this.state.policy } /> 개인정보 취급방침 동의 (필수)
           </Term>
           <Term allAgree>
-            <CheckBox type="checkbox" name="allAgree" onClick={ this.handleCheck } checked={ this.state.allAgree } /> 모두 동의
+            <CheckBox type="checkbox" name="allAgree" onChange={ this.handleCheck } checked={ this.state.allAgree } /> 모두 동의
           </Term>
           <Information>
             <div style={{ color: '#2979ff', textDecoration: 'underline' }}>
