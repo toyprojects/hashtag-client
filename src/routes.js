@@ -14,6 +14,10 @@ export default [
     component: SignUp,
     exact: true
   }, {
+    path: '/signup/form',
+    component: SignUp,
+    exact: true
+  }, {
     path: '/categories',
     component: Category,
     exact: true
