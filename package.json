@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "hashtag",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://toyprojects.github.io/hashtag",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
