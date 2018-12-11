@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
+import LinesEllipsis from 'react-lines-ellipsis'
 import '../../assets/css/page.css'
 import '../../assets/css/swiper.css'
 
@@ -65,6 +66,7 @@ const ProductImageArea = styled.div`
 const ProductDetailArea = styled.div`
   text-align: left;
   padding: 10px 10px 3px 10px;
+  width: 150px;
 `
 
 const ProductBrand = styled.div`
@@ -72,7 +74,7 @@ const ProductBrand = styled.div`
   color: gray;
 `
 
-const ProductName = styled.div`
+const ProductName = styled(LinesEllipsis)`
   line-height: 1.2;
   font-size: 14px;
   max-height: 29px;
@@ -104,11 +106,30 @@ class Home extends Component {
       grabCursor: true,
       autoHeight: false,
       height: 280,
-      autoHeight: false,
       pagination: {
         clickable: true
       },
     }
+    
+    // dummy datas
+    const Items = [
+      {
+        brand: '플레이룩',
+        title: '#4만장_돌파 #오버핏',
+        price: 12000,
+        image: 'https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/3260981/conversions/thumb.jpg'
+      }, {
+        brand: '마롱시크',
+        title: '#고퀄 #핸드메이드 #코트',
+        price: 219000,
+        image: 'https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/3352871/conversions/thumb.jpg'
+      }, {
+        brand: '베리워니',
+        title: '#무료배송 #볼륨_숏패딩',
+        price: 39900,
+        image: 'https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/3550168/conversions/thumb.jpg'
+      }
+    ]
 
     return (
       <div className="page-wrap">
@@ -121,20 +142,27 @@ class Home extends Component {
           <Title><h4 style={{ fontWeight: 'bold' }}>베스트 아이템</h4></Title>
           <SwipeMenu>
             <Swiper {...best} >
-              <StyledLink to="/" exact="true" style={ SwiperParentApp }>
-                <ProductImageArea>
-                  <div style={{ width: '150px', height: '150px', 
-                    backgroundRepeat: 'no-repeat', 
-                    backgroundSize: 'cover', 
-                    backgroundImage: `url('https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/3260981/conversions/thumb.jpg')` }}>
-                  </div>
-                </ProductImageArea>
-                <ProductDetailArea>
-                  <ProductBrand>플레이룩</ProductBrand>
-                  <ProductName>#4만장돌파 #오버핏</ProductName>
-                  <ProductPrice>12,000</ProductPrice>
-                </ProductDetailArea>
-              </StyledLink>
+              { Items.map((item, index) => { return (
+                <StyledLink to="/" exact="true" style={ SwiperParentApp }>
+                  <ProductImageArea>
+                    <div style={{ width: '150px', height: '150px', 
+                      backgroundRepeat: 'no-repeat', 
+                      backgroundSize: 'cover', 
+                      backgroundImage: `url(${ item.image })` }}>
+                    </div>
+                  </ProductImageArea>
+                  <ProductDetailArea>
+                    <ProductBrand>{ item.brand }</ProductBrand>
+                    <ProductName 
+                      text={ item.title }
+                      maxLine="1"
+                      ellipsis=".."
+                      basedOn="letters"
+                    />
+                    <ProductPrice>{ item.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }) }</ProductPrice>
+                  </ProductDetailArea>
+                </StyledLink>
+              ) }) }
             </Swiper>
           </SwipeMenu>
         </Section>
