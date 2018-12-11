@@ -84,7 +84,7 @@ class HomeMenu extends Component {
         <SearchContainer>
           <SearchBar>
             <span>원하는 검색어로 최저가 상품들을 !</span>
-            <span style={{ float: 'right' }}><FontAwesomeIcon icon="search" /></span>
+            <span style={{ float: 'right' }}><FontAwesomeIcon icon="search" style={{ cursor: 'pointer' }} /></span>
           </SearchBar>
         </SearchContainer>
         <SwipeMenu>
