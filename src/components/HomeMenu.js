@@ -3,6 +3,12 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Swiper from 'react-id-swiper'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSearch)
+
 const SwipeMenu = styled.div`
   border-bottom: 1px solid #eee;
   margin-top: 15px;
@@ -78,6 +84,7 @@ class HomeMenu extends Component {
         <SearchContainer>
           <SearchBar>
             <span>원하는 검색어로 최저가 상품들을 !</span>
+            <span style={{ float: 'right' }}><FontAwesomeIcon icon="search" /></span>
           </SearchBar>
         </SearchContainer>
         <SwipeMenu>
