@@ -43,8 +43,8 @@ const StyledLink = styled(NavLink)`
 const SwiperParentApp = {
   width: 'auto',
   display: 'inline-block',
-  marginLeft: '20px',
-  marginRight: '20px'
+  marginLeft: '40px',
+  marginRight: '40px'
 }
 
 class HomeMenu extends Component {
