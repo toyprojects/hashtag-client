@@ -10,6 +10,7 @@ import '../../assets/css/swiper.css'
 const Section = styled.div`
   /* padding: 32px 0 32px 30px; */
   padding-top: 32px;
+  background: ${props => props.background && props.background};
 `
 
 const Title = styled.div`
@@ -87,6 +88,41 @@ const ProductPrice = styled.div`
   font-weight: bold;
 `
 
+const CategoryArea = styled.div`
+  padding: 10px 20px;
+  display: inline-block;
+  width: calc(100% - 40px);
+`
+
+const CategoryRow = styled.div`
+  display: inline-block;
+  width: 25%;
+  float: left;
+`
+
+const CategoryMenu = styled.div`
+  margin-top: 5px;
+`
+
+const CategoryMenuIcon = {
+  display: 'inline-block',
+  width: '50px',
+  height: '40px',
+  textAlign: 'center',
+  verticalAlign: 'middle'
+}
+
+const CategoryMenuName = {
+  display: 'block',
+  marginTop: '4px',
+  fontSize: '11px'
+}
+
+const isTop = {
+  borderBottom: '1px solid #eee',
+  paddingBottom: '10px'
+}
+
 class Home extends Component {
   render() {
     const params = {
@@ -139,6 +175,50 @@ class Home extends Component {
           <div><img src="http://image.oneprice.kr/2018/1023/bfd63592329262d7694ed4871ee17fe1.jpg" /></div>
         </Swiper>
         <Section background="white">
+          <CategoryArea>
+            <CategoryRow>
+              <CategoryMenu style={ isTop }>
+                <span style={ CategoryMenuIcon }>1</span>
+                <span style={ CategoryMenuName }>코트</span>
+              </CategoryMenu>
+              <CategoryMenu>
+                <span style={ CategoryMenuIcon }>2</span>
+                <span style={ CategoryMenuName }>팬츠</span>
+              </CategoryMenu>
+            </CategoryRow>
+            <CategoryRow>
+              <CategoryMenu style={ isTop }>
+                <span style={ CategoryMenuIcon }>3</span>
+                <span style={ CategoryMenuName }>패딩</span>
+              </CategoryMenu>
+              <CategoryMenu>
+                <span style={ CategoryMenuIcon }>4</span>
+                <span style={ CategoryMenuName }>슈즈</span>
+              </CategoryMenu>
+            </CategoryRow>
+            <CategoryRow>
+              <CategoryMenu style={ isTop }>
+                <span style={ CategoryMenuIcon }>5</span>
+                <span style={ CategoryMenuName }>니트</span>
+              </CategoryMenu>
+              <CategoryMenu>
+                <span style={ CategoryMenuIcon }>6</span>
+                <span style={ CategoryMenuName }>남성의류</span>
+              </CategoryMenu>
+            </CategoryRow>
+            <CategoryRow>
+              <CategoryMenu style={ isTop }>
+                <span style={ CategoryMenuIcon }>7</span>
+                <span style={ CategoryMenuName }>스커트</span>
+              </CategoryMenu>
+              <CategoryMenu>
+                <span style={ CategoryMenuIcon }>8</span>
+                <span style={ CategoryMenuName }>전체보기</span>
+              </CategoryMenu>
+            </CategoryRow>
+          </CategoryArea>
+        </Section>
+        <Section background="transparent">
           <Title><h4 style={{ fontWeight: 'bold' }}>베스트 아이템</h4></Title>
           <SwipeMenu>
             <Swiper {...best} >
