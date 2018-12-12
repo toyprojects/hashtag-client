@@ -1,13 +1,13 @@
-### hashtag client
+## hashtag client
 first toyproject, online shoppingmall project
 
-### Maintainers
+## Maintainers
 - Mingeun Kim
 
-### Function
+## Function
 - Automatic product pricing
 
-### Features
+## Features
 - FontAwesome
 - query-string
 - react-bootstrap
@@ -19,6 +19,6 @@ first toyproject, online shoppingmall project
 - jQuery
 - i
 
-### Important
+## Important
 [Brich](https://brich.co.kr) web design clone coding<br />
 asked CTO to give me permission. Thanks you
