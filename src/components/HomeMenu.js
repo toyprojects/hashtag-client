@@ -71,6 +71,10 @@ const SearchBar = styled.div`
 `
 
 class HomeMenu extends Component {
+  handleSearchClick = () => {
+    this.props.history.push('/search')
+  }
+
   render() {
     const params = {
       slidesPerView: 'auto',
@@ -81,7 +85,7 @@ class HomeMenu extends Component {
     };
     return (
       <div>
-        <SearchContainer>
+        <SearchContainer onClick={ this.handleSearchClick }>
           <SearchBar>
             <span>원하는 검색어로 최저가 상품들을 !</span>
             <span style={{ float: 'right' }}><FontAwesomeIcon icon="search" style={{ cursor: 'pointer' }} /></span>

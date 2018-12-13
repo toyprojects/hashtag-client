@@ -5,6 +5,7 @@ export { default as Heart } from './Banner/Heart'
 export { default as Category } from './Banner/Category'
 export { default as Basket } from './Banner/Basket'
 export { default as MyPage } from './Banner/MyPage'
+export { default as Search } from './Banner/Search'
 
 export { default as Today } from './Today'
 export { default as TodayRanking } from './Today/Ranking'
