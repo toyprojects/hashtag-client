@@ -303,27 +303,29 @@ class Home extends Component {
           <Title><h4 style={{ fontWeight: 'bold' }}>베스트 아이템</h4></Title>
           <SwipeMenu>
             <Swiper {...best} >
-              { Items.map((item, index) => { return (
-                <StyledLink to="/" exact="true" style={ SwiperParentApp }>
-                  <ProductImageArea>
-                    <div style={{ width: '150px', height: '150px', 
-                      backgroundRepeat: 'no-repeat', 
-                      backgroundSize: 'cover', 
-                      backgroundImage: `url(${ item.image })` }}>
-                    </div>
-                  </ProductImageArea>
-                  <ProductDetailArea>
-                    <ProductBrand>{ item.brand }</ProductBrand>
-                    <ProductName 
-                      text={ item.title }
-                      maxLine="1"
-                      ellipsis=".."
-                      basedOn="letters"
-                    />
-                    <ProductPrice>{ item.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }) }</ProductPrice>
-                  </ProductDetailArea>
-                </StyledLink>
-              ) }) }
+              <div style={{ paddingBottom: '37px' }}>
+                { Items.map((item, index) => { return (
+                  <StyledLink to="/" exact="true" style={ SwiperParentApp }>
+                    <ProductImageArea>
+                      <div style={{ width: '150px', height: '150px', 
+                        backgroundRepeat: 'no-repeat', 
+                        backgroundSize: 'cover', 
+                        backgroundImage: `url(${ item.image })` }}>
+                      </div>
+                    </ProductImageArea>
+                    <ProductDetailArea>
+                      <ProductBrand>{ item.brand }</ProductBrand>
+                      <ProductName 
+                        text={ item.title }
+                        maxLine="1"
+                        ellipsis=".."
+                        basedOn="letters"
+                      />
+                      <ProductPrice>{ item.price.toLocaleString(navigator.language, { minimumFractionDigits: 0 }) }</ProductPrice>
+                    </ProductDetailArea>
+                  </StyledLink>
+                ) }) }
+              </div>
             </Swiper>
           </SwipeMenu>
         </Section>
