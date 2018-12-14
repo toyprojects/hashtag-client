@@ -22,14 +22,13 @@ import ActiveTabArrow from '../../assets/images/down-arrow.png'
 
 
 const Section = styled.div`
-  /* padding: 32px 0 32px 30px; */
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: ${props => props.background && props.background};
 `
 
 const Title = styled.div`
-  padding-left: 32px;
+  padding-left: 20px;
   text-align: left;
 `
 
@@ -67,7 +66,7 @@ const StyledLink = styled(NavLink)`
 const SwiperParentApp = {
   width: 'auto',
   display: 'inline-block',
-  marginLeft: '32px'
+  marginLeft: '20px'
 }
 
 const ProductImageArea = styled.div`
@@ -100,7 +99,7 @@ const ProductPrice = styled.div`
 `
 
 const CategoryArea = styled.div`
-  padding: 10px 20px;
+  padding: 10px 3px;
   display: inline-block;
   width: calc(100% - 40px);
 `
@@ -161,6 +160,7 @@ const StyledTab = styled(Tab)`
   font-size: 15px;
   padding: 7px 5px 7px 5px;
   font-weight: 500;
+  cursor: pointer;
 
   &.react-tabs__tab--selected {
     border-radius: 25px;
@@ -179,8 +179,67 @@ const StyledTab = styled(Tab)`
       background-size: 18px;
     }
   }
+`
 
-  
+const StyledTabPanel = styled(TabPanel)`
+  width: 100%;
+  &.react-tabs__tab-panel--selected {
+    display: inline-block;
+  }
+`
+
+const ItemWrap = styled.div`
+  width: 50%;
+  padding: 0 5px;
+  margin-bottom: 30px;
+  float: left;
+`
+
+const ItemThumbnail = styled.div`
+  width: 100%;
+`
+
+const ItemDetail = styled.div`
+  text-align: left;
+  padding: 12px 0 0;
+  height: 120px;
+`
+
+const ItemBrand = styled.p`
+  color: #999;
+  font-size: 13px;
+  width: 100%;
+  margin-bottom: -3px;
+`
+
+const ItemName = styled.div`
+  width: 100%;
+  height: 35px;
+  margin: 5px 0 10px;
+  padding-right: 17px;
+  display: block;
+  display: -webkit-box;
+  max-height: 45px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+`
+
+const ItemOriginalPrice = styled.div`
+  font-size: 10px;
+  height: 12px;
+  color: #bbb;
+  text-decoration: line-through;
+`
+
+const ItemDeelPrice = styled.div`
+  font-size: 16px;
+  font-weight: bold;
+  color: #2979ff;
 `
 
 class Home extends Component {
@@ -295,7 +354,7 @@ class Home extends Component {
           </CategoryArea>
         </Section>
         <GrayLine />
-        <Section background="transparent" style={{ paddingLeft: '32px', paddingRight: '32px' }}>
+        <Section background="transparent" style={{ paddingLeft: '20px', paddingRight: '20px' }}>
           <Tabs>
             <StyledTabList>
               <StyledTab>오늘특가</StyledTab>
@@ -303,15 +362,40 @@ class Home extends Component {
               <StyledTab>오늘신상</StyledTab>
             </StyledTabList>
 
-            <TabPanel>
-              <h2>오늘특가</h2>
-            </TabPanel>
-            <TabPanel>
+            <StyledTabPanel>
+              <ItemWrap>
+                <ItemThumbnail> 
+                  <img style={{ width: '217px' }}
+                    src="https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/4111339/conversions/thumb.jpg" />
+                </ItemThumbnail>
+                <ItemDetail>
+                  <ItemBrand>메이블</ItemBrand>
+                  <ItemName>추천♥크리스마스 커플룩 니트 2~3만원대 특가전!</ItemName>
+                  <ItemOriginalPrice><span>35,000</span></ItemOriginalPrice>
+                  <ItemDeelPrice><span>20%</span> 33,250</ItemDeelPrice>
+                </ItemDetail>
+              </ItemWrap>
+              <ItemWrap>
+                <ItemThumbnail> 
+                  <img style={{ width: '217px' }}
+                    src="https://s3.ap-northeast-2.amazonaws.com/storage.b-flow.io/4111339/conversions/thumb.jpg" />
+                </ItemThumbnail>
+                <ItemDetail>
+                  <ItemBrand>메이블</ItemBrand>
+                  <ItemName>추천♥크리스마스 커플룩 니트 2~3만원대 특가전!</ItemName>
+                  <ItemOriginalPrice><span>35,000</span></ItemOriginalPrice>
+                  <ItemDeelPrice><span>20%</span> 33,250</ItemDeelPrice>
+                </ItemDetail>
+              </ItemWrap>
+            </StyledTabPanel>
+
+            <StyledTabPanel>
               <h2>오늘베스트</h2>
-            </TabPanel>
-            <TabPanel>
+            </StyledTabPanel>
+
+            <StyledTabPanel>
               <h2>오늘신상</h2>
-            </TabPanel>
+            </StyledTabPanel>
           </Tabs>
         </Section>
         <GrayLine />
