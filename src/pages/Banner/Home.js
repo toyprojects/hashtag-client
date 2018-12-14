@@ -18,6 +18,8 @@ import CategoryPants from '../../assets/images/category/pants.png'
 import CategoryPadding from '../../assets/images/category/padding.png'
 import CategoryMan from '../../assets/images/category/man.png'
 
+import ActiveTabArrow from '../../assets/images/down-arrow.png'
+
 
 const Section = styled.div`
   /* padding: 32px 0 32px 30px; */
@@ -164,7 +166,21 @@ const StyledTab = styled(Tab)`
     border-radius: 25px;
     border-color: #2979ff;
     color: #2979ff;
+
+    &::after {
+      content: "";
+      background-image: url(${ActiveTabArrow});
+      position: absolute;
+      background-repeat: no-repeat;
+      bottom: -53px;
+      left: 44%;
+      width: 100px;
+      height: 50px;
+      background-size: 18px;
+    }
   }
+
+  
 `
 
 class Home extends Component {
