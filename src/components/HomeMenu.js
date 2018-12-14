@@ -28,8 +28,8 @@ const StyledLink = styled(NavLink)`
   border-color: transparent;
   border: none;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 14px;
   text-decoration: none;
   color: black;
   margin: 0;
@@ -49,7 +49,7 @@ const StyledLink = styled(NavLink)`
 const SwiperParentApp = {
   width: 'auto',
   display: 'inline-block',
-  marginLeft: '33px'
+  marginLeft: '26px'
 }
 
 const SearchContainer = styled.div`
