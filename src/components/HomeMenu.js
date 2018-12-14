@@ -13,8 +13,7 @@ const SwipeMenu = styled.div`
   border-bottom: 1px solid #eee;
   margin-top: 15px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
-  height: 40px;
+  margin-bottom: 10px;
   white-space: nowrap;
   overflow-x: hidden;
   overflow-y: hidden;
